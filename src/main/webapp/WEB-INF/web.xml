@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- ============================================================ -->
+    <!-- Application Display Name                                     -->
+    <!-- ============================================================ -->
+    <display-name>Smart Student Attendance and Academic Monitoring System</display-name>
+    <description>
+        A College Project for Attendance Tracking and Academic Performance Monitoring.
+    </description>
+
+    <!-- ============================================================ -->
+    <!-- Welcome File                                                 -->
+    <!-- ============================================================ -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- ============================================================ -->
+    <!-- Session Configuration                                        -->
+    <!-- ============================================================ -->
+    <session-config>
+        <!-- Session timeout: 30 minutes -->
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+            <secure>false</secure>
+            <!-- Set to true in production (HTTPS only) -->
+        </cookie-config>
+    </session-config>
+
+    <!-- ============================================================ -->
+    <!-- Context Parameters (Global Config)                           -->
+    <!-- ============================================================ -->
+    <context-param>
+        <param-name>appName</param-name>
+        <param-value>Smart Attendance System</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>appVersion</param-name>
+        <param-value>1.0.0</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>collegeName</param-name>
+        <param-value>ABC College of Engineering</param-value>
+    </context-param>
+
+    <!-- ============================================================ -->
+    <!-- FILTERS                                                      -->
+    <!-- ============================================================ -->
+
+    <!-- Authentication Filter -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.smartattendance.filter.AuthFilter</filter-class>
+    </filter>
+
+    <!-- Student Filter -->
+    <filter>
+        <filter-name>StudentFilter</filter-name>
+        <filter-class>com.smartattendance.filter.StudentFilter</filter-class>
+    </filter>
+
+    <!-- Faculty Filter -->
+    <filter>
+        <filter-name>FacultyFilter</filter-name>
+        <filter-class>com.smartattendance.filter.FacultyFilter</filter-class>
+    </filter>
+
+    <!-- ============================================================ -->
+    <!-- FILTER MAPPINGS                                              -->
+    <!-- ============================================================ -->
+
+    <!-- Auth Filter: Protects all secured routes -->
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/student/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/faculty/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Student Filter: Restricts student-only routes -->
+    <filter-mapping>
+        <filter-name>StudentFilter</filter-name>
+        <url-pattern>/student/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Faculty Filter: Restricts faculty-only routes -->
+    <filter-mapping>
+        <filter-name>FacultyFilter</filter-name>
+        <url-pattern>/faculty/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ============================================================ -->
+    <!-- SERVLETS                                                     -->
+    <!-- ============================================================ -->
+
+    <!-- ─── Auth Servlets ──────────────────────────────────────── -->
+
+    <servlet>
+        <servlet-name>StudentLoginServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.auth.StudentLoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FacultyLoginServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.auth.FacultyLoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.auth.LogoutServlet</servlet-class>
+    </servlet>
+
+    <!-- ─── Student Servlets ────────────────────────────────────── -->
+
+    <servlet>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.student.StudentDashboardServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.student.StudentAttendanceServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.student.StudentMarksServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StudentProgressServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.student.StudentProgressServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StudentProfileServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.student.StudentProfileServlet</servlet-class>
+    </servlet>
+
+    <!-- ─── Faculty Servlets ────────────────────────────────────── -->
+
+    <servlet>
+        <servlet-name>FacultyDashboardServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.FacultyDashboardServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>MarkAttendanceServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.MarkAttendanceServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AttendanceReportServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.AttendanceReportServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>MarksManagementServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.MarksManagementServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StudentMonitorServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.StudentMonitorServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FacultyProfileServlet</servlet-name>
+        <servlet-class>com.smartattendance.servlet.faculty.FacultyProfileServlet</servlet-class>
+    </servlet>
+
+    <!-- ============================================================ -->
+    <!-- SERVLET MAPPINGS                                             -->
+    <!-- ============================================================ -->
+
+    <!-- ─── Auth Servlet Mappings ──────────────────────────────── -->
+
+    <servlet-mapping>
+        <servlet-name>StudentLoginServlet</servlet-name>
+        <url-pattern>/auth/student-login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FacultyLoginServlet</servlet-name>
+        <url-pattern>/auth/faculty-login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/auth/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- ─── Student Servlet Mappings ───────────────────────────── -->
+
+    <servlet-mapping>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <url-pattern>/student/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <url-pattern>/student/attendance</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <url-pattern>/student/marks</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentProgressServlet</servlet-name>
+        <url-pattern>/student/progress</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentProfileServlet</servlet-name>
+        <url-pattern>/student/profile</url-pattern>
+    </servlet-mapping>
+
+    <!-- ─── Faculty Servlet Mappings ───────────────────────────── -->
+
+    <servlet-mapping>
+        <servlet-name>FacultyDashboardServlet</servlet-name>
+        <url-pattern>/faculty/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MarkAttendanceServlet</servlet-name>
+        <url-pattern>/faculty/mark-attendance</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AttendanceReportServlet</servlet-name>
+        <url-pattern>/faculty/attendance-report</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MarksManagementServlet</servlet-name>
+        <url-pattern>/faculty/marks</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentMonitorServlet</servlet-name>
+        <url-pattern>/faculty/monitor</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FacultyProfileServlet</servlet-name>
+        <url-pattern>/faculty/profile</url-pattern>
+    </servlet-mapping>
+
+    <!-- ============================================================ -->
+    <!-- ERROR PAGES                                                  -->
+    <!-- ============================================================ -->
+
+    <error-page>
+        <error-code>400</error-code>
+        <location>/WEB-INF/views/common/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/views/common/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/common/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/views/common/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/views/common/error.jsp</location>
+    </error-page>
+
+</web-app>
