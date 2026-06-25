@@ -22,6 +22,7 @@ public class Subject implements Serializable {
     private int           academicYearId;
     private boolean       active;
     private LocalDateTime createdAt;
+    private int studentCount;
 
     // Denormalized fields (populated by DAO JOINs)
     private String departmentName;
@@ -35,7 +36,8 @@ public class Subject implements Serializable {
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
-
+public int getStudentCount() { return studentCount; }
+public void setStudentCount(int studentCount) { this.studentCount = studentCount; }
     public String getSubjectCode() { return subjectCode; }
     public void setSubjectCode(String subjectCode) { this.subjectCode = subjectCode; }
 

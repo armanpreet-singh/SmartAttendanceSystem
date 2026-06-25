@@ -290,3 +290,30 @@
     </error-page>
 
 </web-app>
+<!-- ─── New Faculty Servlet Declarations ───────────────────── -->
+
+<servlet>
+    <servlet-name>FacultyUpdateProfileServlet</servlet-name>
+    <servlet-class>
+        com.smartattendance.servlet.faculty.FacultyUpdateProfileServlet
+    </servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>FacultyChangePasswordServlet</servlet-name>
+    <servlet-class>
+        com.smartattendance.servlet.faculty.FacultyChangePasswordServlet
+    </servlet-class>
+</servlet>
+
+<!-- ─── New Faculty Servlet Mappings ───────────────────────── -->
+
+<servlet-mapping>
+    <servlet-name>FacultyUpdateProfileServlet</servlet-name>
+    <url-pattern>/faculty/update-profile</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>FacultyChangePasswordServlet</servlet-name>
+    <url-pattern>/faculty/change-password</url-pattern>
+</servlet-mapping>
