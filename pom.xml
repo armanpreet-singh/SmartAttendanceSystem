@@ -1,54 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ============================================================ -->
-    <!-- Project Coordinates                                          -->
-    <!-- ============================================================ -->
     <groupId>com.smartattendance</groupId>
     <artifactId>SmartAttendanceSystem</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>Smart Student Attendance and Academic Monitoring System</name>
-    <description>
-        A complete College Project for monitoring student attendance
-        and academic performance built with Java, JSP, Servlets,
-        JDBC, MySQL, Maven, and Apache Tomcat 10.
-    </description>
+    <name>SmartAttendanceSystem</name>
 
-    <!-- ============================================================ -->
-    <!-- Global Properties                                            -->
-    <!-- ============================================================ -->
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- Dependency Versions -->
         <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
         <jakarta.servlet.jsp.version>3.1.1</jakarta.servlet.jsp.version>
-        <jakarta.servlet.jstl.version>3.0.1</jakarta.servlet.jstl.version>
-        <mysql.connector.version>8.3.0</mysql.connector.version>
-        <junit.version>5.10.2</junit.version>
-        <slf4j.version>2.0.12</slf4j.version>
-        <logback.version>1.5.3</logback.version>
+        <jakarta.jstl.version>3.0.1</jakarta.jstl.version>
+
+        <mysql.version>8.3.0</mysql.version>
+
+        <slf4j.version>2.0.13</slf4j.version>
+        <logback.version>1.5.6</logback.version>
     </properties>
 
-    <!-- ============================================================ -->
-    <!-- Dependencies                                                 -->
-    <!-- ============================================================ -->
     <dependencies>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- Jakarta Servlet API (Tomcat 10 uses Jakarta namespace)   -->
-        <!-- -------------------------------------------------------- -->
+        <!-- Servlet -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -56,9 +40,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- Jakarta JSP API                                          -->
-        <!-- -------------------------------------------------------- -->
+        <!-- JSP -->
         <dependency>
             <groupId>jakarta.servlet.jsp</groupId>
             <artifactId>jakarta.servlet.jsp-api</artifactId>
@@ -66,126 +48,73 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- JSTL (Jakarta Standard Tag Library)                      -->
-        <!-- -------------------------------------------------------- -->
+        <!-- JSTL -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-            <version>${jakarta.servlet.jstl.version}</version>
+            <version>${jakarta.jstl.version}</version>
         </dependency>
 
-        <!-- JSTL Implementation -->
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-            <version>${jakarta.servlet.jstl.version}</version>
+            <version>${jakarta.jstl.version}</version>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- MySQL JDBC Connector                                      -->
-        <!-- -------------------------------------------------------- -->
+        <!-- MySQL -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>${mysql.connector.version}</version>
+            <version>${mysql.version}</version>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- SLF4J Logging API                                        -->
-        <!-- -------------------------------------------------------- -->
+        <!-- SLF4J -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- Logback Classic (SLF4J Implementation)                   -->
-        <!-- -------------------------------------------------------- -->
+        <!-- Logback -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
 
-        <!-- -------------------------------------------------------- -->
-        <!-- JUnit 5 for Unit Testing                                 -->
-        <!-- -------------------------------------------------------- -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
-    <!-- ============================================================ -->
-    <!-- Build Configuration                                          -->
-    <!-- ============================================================ -->
     <build>
-        <finalName>SmartAttendanceSystem</finalName>
 
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
+        <finalName>SmartAttendanceSystem</finalName>
 
         <plugins>
 
-            <!-- ---------------------------------------------------- -->
-            <!-- Maven Compiler Plugin                                 -->
-            <!-- ---------------------------------------------------- -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
+
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>UTF-8</encoding>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
+
             </plugin>
 
-            <!-- ---------------------------------------------------- -->
-            <!-- Maven WAR Plugin                                      -->
-            <!-- ---------------------------------------------------- -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
-                <configuration>
-                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                    <failOnMissingWebXml>true</failOnMissingWebXml>
-                </configuration>
-            </plugin>
 
-            <!-- ---------------------------------------------------- -->
-            <!-- Maven Surefire Plugin (JUnit 5 support)              -->
-            <!-- ---------------------------------------------------- -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
                 <configuration>
-                    <useModulePath>false</useModulePath>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+
             </plugin>
 
         </plugins>
+
     </build>
 
 </project>
