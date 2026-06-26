@@ -289,7 +289,7 @@
         <location>/WEB-INF/views/common/error.jsp</location>
     </error-page>
 
-</web-app>
+
 <!-- ─── New Faculty Servlet Declarations ───────────────────── -->
 
 <servlet>
@@ -317,3 +317,4 @@
     <servlet-name>FacultyChangePasswordServlet</servlet-name>
     <url-pattern>/faculty/change-password</url-pattern>
 </servlet-mapping>
+</web-app>
