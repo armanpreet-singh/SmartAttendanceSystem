@@ -1,3 +1,4 @@
+C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\AnalyticsDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\AttendanceDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\DepartmentDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\FacultyAttendanceDAO.java
@@ -7,6 +8,7 @@ C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattend
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\FacultyProfileDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\LoginDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\MarksDAO.java
+C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\ReportDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\StudentDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\SubjectDAO.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\dao\UserDAO.java
@@ -27,12 +29,14 @@ C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattend
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\auth\LoginServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\auth\LogoutServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\auth\StudentLoginServlet.java
+C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\ExportReportServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\AttendanceReportServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyAttendanceServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyChangePasswordServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyDashboardServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyMarksServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyProfileServlet.java
+C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyReportServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\FacultyUpdateProfileServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\MarkAttendanceServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\faculty\MarksManagementServlet.java
@@ -43,6 +47,7 @@ C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattend
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\student\StudentMarksServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\student\StudentProfileServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\student\StudentProgressServlet.java
+C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\servlet\student\StudentReportServlet.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\util\AttendanceCalculator.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\util\DateUtil.java
 C:\Users\ARMAN-DEV\Downloads\SmartAttendanceSystem\src\main\java\com\smartattendance\util\DBConnection.java

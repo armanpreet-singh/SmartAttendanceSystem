@@ -1,11 +1,15 @@
+com\smartattendance\dao\AnalyticsDAO.class
 com\smartattendance\util\DBConnection.class
 com\smartattendance\util\PasswordUtil.class
+com\smartattendance\dao\ReportDAO.class
 com\smartattendance\servlet\faculty\FacultyAttendanceServlet.class
 com\smartattendance\model\Subject.class
 com\smartattendance\util\DateUtil.class
 com\smartattendance\dao\FacultyMarksDAO.class
 com\smartattendance\servlet\student\StudentDashboardServlet.class
 com\smartattendance\dao\FacultyDashboardDAO.class
+com\smartattendance\servlet\student\StudentReportServlet.class
+com\smartattendance\servlet\faculty\FacultyReportServlet.class
 com\smartattendance\servlet\auth\LogoutServlet.class
 com\smartattendance\servlet\student\StudentMarksServlet.class
 com\smartattendance\servlet\student\StudentProfileServlet.class
@@ -16,6 +20,7 @@ com\smartattendance\dao\FacultyAttendanceDAO.class
 com\smartattendance\filter\AuthFilter.class
 com\smartattendance\servlet\faculty\FacultyProfileServlet.class
 com\smartattendance\servlet\student\StudentAttendanceServlet.class
+com\smartattendance\servlet\ExportReportServlet.class
 com\smartattendance\servlet\student\StudentProgressServlet.class
 com\smartattendance\servlet\faculty\FacultyUpdateProfileServlet.class
 com\smartattendance\servlet\faculty\FacultyDashboardServlet.class

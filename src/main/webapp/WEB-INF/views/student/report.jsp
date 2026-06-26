@@ -217,9 +217,9 @@
         %>
         <div class="col-6 col-md-3">
             <div class="card border-0 shadow-sm text-center p-3" style="border-radius:14px;">
-                <h3 class="fw-bold text-<%= ovBadge %> mb-0">
-                    <fmt:formatNumber value="<%= overallPct %>" maxFractionDigits="1"/>%
-                </h3>
+               <h3 class="fw-bold text-<%= ovBadge %> mb-0">
+    <%= String.format("%.1f", overallPct) %>%
+</h3>
                 <small class="text-muted">Overall</small>
             </div>
         </div>
@@ -334,8 +334,7 @@
                                         </div>
                                     </div>
                                     <span class="fw-semibold text-<%= bg %>">
-                                        <fmt:formatNumber value="<%= pct %>"
-                                                          maxFractionDigits="1"/>%
+                                      <%= String.format("%.1f", pct) %>%
                                     </span>
                                 </div>
                             </td>
@@ -491,9 +490,9 @@
                 <span class="badge bg-primary me-2"><%= code %></span>
                 <%= name %>
             </h6>
-            <span class="badge bg-<%= subBg %> fs-6 px-3 py-1">
-                <fmt:formatNumber value="<%= subPct %>" maxFractionDigits="1"/>%
-            </span>
+          <span class="badge bg-<%= subBg %> fs-6 px-3 py-1">
+   <%= String.format("%.1f", subPct) %>%
+</span>
         </div>
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -531,8 +530,7 @@
                                     : "—" %>
                             </td>
                             <td class="text-center text-<%= mBg %>">
-                                <fmt:formatNumber value="<%= mPct %>"
-                                                  maxFractionDigits="1"/>%
+                               <%= String.format("%.1f", mPct) %>%
                             </td>
                             <td class="text-center">
                                 <% String grade = (String) mRow.get("grade"); %>
@@ -637,23 +635,19 @@
                             </td>
                             <td class="text-center text-muted"><%= row.get("credits") %></td>
                             <td class="text-center fw-semibold">
-                                <fmt:formatNumber value="<%= row.get("totalObtained") %>"
-                                                  maxFractionDigits="1"/>
+                             <%= String.format("%.1f", ((Number)row.get("totalObtained")).doubleValue()) %>
                             </td>
                             <td class="text-center text-muted"><%= row.get("totalMax") %></td>
                             <td class="text-center">
                                 <span class="badge bg-<%= bg %> rounded-pill px-3">
-                                    <fmt:formatNumber value="<%= pct %>"
-                                                      maxFractionDigits="1"/>%
+                                   <%= String.format("%.1f", pct) %>%
                                 </span>
                             </td>
                             <td class="text-center text-success fw-medium">
-                                <fmt:formatNumber value="<%= row.get("bestScore") %>"
-                                                  maxFractionDigits="1"/>
+                               <%= String.format("%.1f", ((Number) row.get("bestScore")).doubleValue()) %>
                             </td>
                             <td class="text-center text-danger fw-medium">
-                                <fmt:formatNumber value="<%= row.get("lowestScore") %>"
-                                                  maxFractionDigits="1"/>
+                                <%= String.format("%.1f", ((Number) row.get("lowestScore")).doubleValue()) %>
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-<%= bg %> rounded-pill">
@@ -791,8 +785,7 @@
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-<%= bg %> rounded-pill px-3">
-                                    <fmt:formatNumber value="<%= pct %>"
-                                                      maxFractionDigits="1"/>%
+                                   <%= String.format("%.1f", pct) %>%
                                 </span>
                             </td>
                         </tr>

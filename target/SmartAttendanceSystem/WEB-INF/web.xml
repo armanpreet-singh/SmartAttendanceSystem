@@ -305,6 +305,43 @@
         com.smartattendance.servlet.faculty.FacultyChangePasswordServlet
     </servlet-class>
 </servlet>
+<!-- ─── Report Servlet Declarations ────────────────────────── -->
+<servlet>
+    <servlet-name>StudentReportServlet</servlet-name>
+    <servlet-class>
+        com.smartattendance.servlet.student.StudentReportServlet
+    </servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>FacultyReportServlet</servlet-name>
+    <servlet-class>
+        com.smartattendance.servlet.faculty.FacultyReportServlet
+    </servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>ExportReportServlet</servlet-name>
+    <servlet-class>
+        com.smartattendance.servlet.ExportReportServlet
+    </servlet-class>
+</servlet>
+
+<!-- ─── Report Servlet Mappings ────────────────────────────── -->
+<servlet-mapping>
+    <servlet-name>StudentReportServlet</servlet-name>
+    <url-pattern>/student/reports</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>FacultyReportServlet</servlet-name>
+    <url-pattern>/faculty/reports</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>ExportReportServlet</servlet-name>
+    <url-pattern>/export/report</url-pattern>
+</servlet-mapping>
 
 <!-- ─── New Faculty Servlet Mappings ───────────────────────── -->
 
